@@ -1,7 +1,7 @@
 Simple configurable stack circular progress bar built out of the lines.
 
 <p>
-  <img src="https://github.com/G33kFreak/circular_progress_bar_with_lines/blob/main/doc/example.gif?raw=true"
+  <img src="https://github.com/Trushar88/stackcircularprogressbar/blob/main/ssp.png?raw=true"
     alt="An animated image of the iOS in-app purchase UI" height="400"/>
   &nbsp;&nbsp;&nbsp;&nbsp;
 </p>
