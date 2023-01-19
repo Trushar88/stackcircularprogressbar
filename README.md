@@ -1,10 +1,23 @@
-Simple configurable stack circular progress bar built out of the lines.
+# Stack Circular Progress
 
 <p>
-  <img src="https://github.com/G33kFreak/circular_progress_bar_with_lines/blob/main/doc/example.gif?raw=true"
-    alt="An animated image of the iOS in-app purchase UI" height="400"/>
-  &nbsp;&nbsp;&nbsp;&nbsp;
+  <a href="https://pub.dev/packages/simple_circular_progress_bar/changelog">
+    <img src="https://img.shields.io/badge/version-0.0.1-blueviolet" />
+  </a>
+  <a href="https://docs.flutter.dev/development/tools/sdk/releases">
+    <img src="https://img.shields.io/badge/flutter-3.0.1-blue" />
+  </a>
+  <a href="https://dart.dev/guides/whats-new">
+    <img src="https://img.shields.io/badge/dart-2.17.1-blue" />
+  </a>
 </p>
+
+Make an animated multiple circular using Stack CircularProgress.
+
+![ssp](https://user-images.githubusercontent.com/95899209/213517968-bf1bfce8-20af-45c0-b5bd-3a7d942a30ff.png)
+
+
+  &nbsp;&nbsp;&nbsp;&nbsp;
 
 ## Getting started
 
