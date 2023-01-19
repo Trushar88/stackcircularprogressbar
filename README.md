@@ -1,7 +1,7 @@
 Simple configurable stack circular progress bar built out of the lines.
 
 <p>
-![alt text](https://github.com/Trushar88/stackcircularprogressbar/blob/main/ssp.png?raw=true)
+![alt text]([https://github.com/Trushar88/stackcircularprogressbar/blob/main/ssp.png](https://user-images.githubusercontent.com/95899209/213517968-bf1bfce8-20af-45c0-b5bd-3a7d942a30ff.png)?raw=true)
 
   &nbsp;&nbsp;&nbsp;&nbsp;
 </p>
