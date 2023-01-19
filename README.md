@@ -1,11 +1,9 @@
 Simple configurable stack circular progress bar built out of the lines.
 
-<p>
 ![ssp](https://user-images.githubusercontent.com/95899209/213517968-bf1bfce8-20af-45c0-b5bd-3a7d942a30ff.png)
 
 
   &nbsp;&nbsp;&nbsp;&nbsp;
-</p>
 
 ## Getting started
 
