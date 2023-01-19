@@ -1,4 +1,4 @@
-Simple configurable circular progress bar built out of the lines.
+Simple configurable stack circular progress bar built out of the lines.
 
 <p>
   <img src="https://github.com/G33kFreak/circular_progress_bar_with_lines/blob/main/doc/example.gif?raw=true"
