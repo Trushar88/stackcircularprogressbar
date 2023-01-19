@@ -1,7 +1,7 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:circular_progress_stack/circularprogressstack.dart';
-import 'package:circular_progress_stack/src/Painter/circle.dart';
+import 'package:circular_progress_stack/src/Animated_Circle_Painter/circle.dart';
 import 'package:circular_progress_stack/src/circle_helper.dart';
 import 'package:flutter/material.dart';
 
@@ -33,8 +33,9 @@ class AnimatedStackCircularProgress extends StatefulWidget {
 class _AnimatedStackCircularState extends State<AnimatedStackCircularProgress>
     with TickerProviderStateMixin {
   late List<AnimationController> controller;
-  int animatedValue = 0;
   late List<Animation<int>> animation;
+  int animatedValue = 0;
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -47,9 +48,7 @@ class _AnimatedStackCircularState extends State<AnimatedStackCircularProgress>
   @override
   void didUpdateWidget(covariant AnimatedStackCircularProgress oldWidget) {
     disposeAnim();
-
     fillController();
-
     super.didUpdateWidget(oldWidget);
   }
 
