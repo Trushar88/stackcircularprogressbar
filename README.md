@@ -10,6 +10,9 @@
   <a href="https://dart.dev/guides/whats-new">
     <img src="https://img.shields.io/badge/dart-2.17.1-blue" />
   </a>
+      <a href="https://pub.dev/packages/agora_uikit"><img src="https://img.shields.io/pub/likes/circular_progress_stack?logo=dart"/></a>
+    <a href="https://pub.dev/packages/agora_uikit"><img src="https://img.shields.io/pub/popularity/circular_progress_stack?logo=dart"/></a>
+    <a href="https://pub.dev/packages/agora_uikit"><img src="https://img.shields.io/pub/points/circular_progress_stack?logo=dart"/></a><br/>
 </p>
 
 Make an **Simple** or **Animated** multiple circular progress bar using **Stack Circular Progress**.
