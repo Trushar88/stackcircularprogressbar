@@ -6,14 +6,34 @@ import 'package:circular_progress_stack/src/circle_helper.dart';
 import 'package:flutter/material.dart';
 
 class AnimatedStackCircularProgress extends StatefulWidget {
+  // CirclSize :- you can set circle size as per your need and UI
   final double circleSize;
+
+  // BarValues :- Bar value class has two parameter
+  // progressValueInPercentage :- You need to pass progress value in percentage (between 1 to 10) according your progress
+  // barColor :- in bar color you need to pass color what you want to set color on perticular bar
+  // note :- stack cricle progress draw circle bar accoring barValues so you need to pass how many you want to.
   final List<BarValue>? barValues;
+
+  // StrokeWidht :- StrokeWidth property set you bar width , you need to pass value in double (ex - 10.10)
   final double strokeWidth;
+
+  //StrokeSpacePadding :- StrokeSpacePadding indentify spacing between two bars so pass accordingly
   final double strokeSpacePadding;
+
+  //animationDurationIn :- this duration is use for bar animation you need to paas according your need and you want to animate in duration
   final Duration? animationDurationIn;
+
+  //unPorgressBarWidth :- unPorgressBarWidth set the width of unprogress bar
   final double unPorgressBarWidth;
+
+  //isAnimated :- if you want to diplay bar wothout animated you can set this value as a false
+  //default value is true
   final bool isAnimated;
+
+  //unporgressBarColor :- set color on empty area of progress bar
   final Color unProgressBarColor;
+
   const AnimatedStackCircularProgress(
       {super.key,
       this.strokeWidth = 15,
@@ -45,6 +65,7 @@ class _AnimatedStackCircularState extends State<AnimatedStackCircularProgress>
         child: getAnimatedStackCircle(circles: widget.barValues!));
   }
 
+  //update the animation while you set the circle increase or decrease
   @override
   void didUpdateWidget(covariant AnimatedStackCircularProgress oldWidget) {
     disposeAnim();
@@ -52,12 +73,14 @@ class _AnimatedStackCircularState extends State<AnimatedStackCircularProgress>
     super.didUpdateWidget(oldWidget);
   }
 
+  //dispose the animation
   @override
   void dispose() {
     disposeAnim();
     super.dispose();
   }
 
+  //use this function to dispose the controller of animation
   void disposeAnim() {
     for (int i = 0; i < controller.length; i++) {
       controller[i].dispose();
@@ -65,6 +88,7 @@ class _AnimatedStackCircularState extends State<AnimatedStackCircularProgress>
     }
   }
 
+  // this funtion is use to fill the animation controller according barvalues
   void fillController() {
     controller = <AnimationController>[];
     animation = <Animation<int>>[];
@@ -89,16 +113,21 @@ class _AnimatedStackCircularState extends State<AnimatedStackCircularProgress>
     }
   }
 
+  // return the list of circle based on barValues list
   Widget getAnimatedStackCircle({required List<BarValue> circles}) {
     return Stack(
       children: List.generate(circles.length, (index) {
         return Positioned(
+          //set the bottom position of perticular bar
           bottom: getStrokeSpace(
               index, widget.strokeWidth, widget.strokeSpacePadding),
+          //set the top position of perticular bar
           top: getStrokeSpace(
               index, widget.strokeWidth, widget.strokeSpacePadding),
+          //set the left position of perticular bar
           left: getStrokeSpace(
               index, widget.strokeWidth, widget.strokeSpacePadding),
+          //set the right position of perticular bar
           right: getStrokeSpace(
               index, widget.strokeWidth, widget.strokeSpacePadding),
           child: GestureDetector(
@@ -121,6 +150,7 @@ class _AnimatedStackCircularState extends State<AnimatedStackCircularProgress>
     );
   }
 
+  // initialize animation controller
   @override
   void initState() {
     fillController();

@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 
+//Sample bar colors
 class BarColor {
   static const black = Colors.black;
   static const blue = Colors.blue;
