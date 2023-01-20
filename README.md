@@ -4,11 +4,11 @@
  
   <a href="https://dart.dev/guides/whats-new">
   </a>
-    <a href="https://pub.dev/packages/agora_uikit"><img src="https://img.shields.io/pub/likes/circular_progress_stack?logo=dart"/></a>
-    <a href="https://pub.dev/packages/agora_uikit"><img src="https://img.shields.io/pub/popularity/circular_progress_stack?logo=dart"/></a>
-    <a href="https://pub.dev/packages/agora_uikit"><img src="https://img.shields.io/pub/points/circular_progress_stack?logo=dart"/></a><br/>
+    <a href="https://pub.dev/packages/circular_progress_stack"><img src="https://img.shields.io/pub/likes/circular_progress_stack?logo=dart"/></a>
+    <a href="https://pub.dev/packages/circular_progress_stack"><img src="https://img.shields.io/pub/popularity/circular_progress_stack?logo=dart"/></a>
+    <a href="https://pub.dev/packages/circular_progress_stack"><img src="https://img.shields.io/pub/points/circular_progress_stack?logo=dart"/></a><br/>
     <img src="https://img.shields.io/badge/Platform-iOS%20%7C%20Android-blue?logo=flutter" alt="Platform" />
-    <a href="https://pub.dev/packages/agora_uikit"><img src="https://img.shields.io/pub/v/circular_progress_stack"/></a>
+    <a href="https://pub.dev/packages/circular_progress_stack"><img src="https://img.shields.io/pub/v/circular_progress_stack"/></a>
   <img src="https://img.shields.io/github/license/Trushar88/stackcircularprogressbar?color=green"
       alt="License: MIT" />
 </p>
