@@ -1,4 +1,4 @@
-import 'package:circular_progress_stack/circularprogressstack.dart';
+import 'package:circular_progress_stack/circular_stack.dart';
 import 'package:flutter/material.dart';
 
 void main() {
