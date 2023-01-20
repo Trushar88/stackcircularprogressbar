@@ -1,6 +1,6 @@
 // ignore_for_file: must_be_immutable
 
-import 'package:circular_progress_stack/circular_stack.dart';
+import 'package:circular_progress_stack/circular_progress_stack.dart';
 import 'package:circular_progress_stack/src/Animated_Circle_Painter/circle.dart';
 import 'package:circular_progress_stack/src/circle_helper.dart';
 import 'package:flutter/material.dart';
