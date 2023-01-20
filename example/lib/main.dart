@@ -43,11 +43,18 @@ class _MyHomePageState extends State<MyHomePage> {
           children: [
             Center(
               child: StackCircularProgress(
+                //CircleSize set size according your UI
                 circleSize: MediaQuery.of(context).size.width - 200,
+                //StrokeWidth you can define value as per your need
                 strokeWidth: 15,
+                //strokeSpacePadding you can define value as per your need
                 strokeSpacePadding: 10,
+                //unporgressBarColor : set the color empty area of progress bar
                 unporgressBarColor: const Color(0xffD7DEE7),
+                //bar values list you can change according your values
                 barValues: [
+                  // you can set bar percentage according you progress value
+                  // you can use your own color (Colors.anyColor)
                   BarValue(
                       progressValueInPercentage: 50, barColor: BarColor.green),
                   BarValue(
@@ -148,14 +155,24 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Center(
               child: AnimatedStackCircularProgress(
+                //CircleSize set size according your UI
                 circleSize: MediaQuery.of(context).size.width - 300,
+                //StrokeWidth you can define value as per your need
                 strokeWidth: 10,
+                //strokeSpacePadding you can define value as per your need
                 strokeSpacePadding: 0,
+                //unPorgressBarWidth you can set negative or positive value both accroding your need
                 unPorgressBarWidth: -5,
+                //isAnimated is define progressbar will be animate or not hence, if you want disable animation set it false
                 isAnimated: true,
+                //unporgressBarColor : set the color empty area of progress bar
                 unProgressBarColor: const Color(0xffD7DEE7),
+                //animationDurationIn you can set duration of animation
                 animationDurationIn: const Duration(seconds: 1),
+                //bar values list you can change according your values
                 barValues: [
+                  // you can set bar percentage according you progress value
+                  // you can use your own color (Colors.anyColor)
                   BarValue(
                       progressValueInPercentage: 50, barColor: BarColor.blue),
                   BarValue(
