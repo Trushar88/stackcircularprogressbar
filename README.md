@@ -1,6 +1,6 @@
 # Stack Circular Progress
 
-<p>
+<p align="center">
  
   <a href="https://dart.dev/guides/whats-new">
   </a>
