@@ -12,11 +12,14 @@
   </a>
 </p>
 
-Make an animated multiple circular using Stack CircularProgress.
+Make an **Simple** or **Animated** multiple circular progress bar using **Stack Circular Progress**.
 
-![Screenshot_1674193728](https://user-images.githubusercontent.com/95899209/213626508-56a87750-d37e-4d17-9992-35ec9923e457.png)
+# Demo Simple And Animated 
 
-
+<div>  
+<img src= "https://user-images.githubusercontent.com/95899209/213628682-fa85ad7d-a0ef-48f5-94ba-5786e720d8dd.png" width="200"/>
+<img src= "https://user-images.githubusercontent.com/95899209/213628480-935e79a5-357d-4196-9fb4-7ecdbcff07c1.gif" width="200"/>
+</div>
   &nbsp;&nbsp;&nbsp;&nbsp;
 
 ## Getting started
@@ -34,22 +37,14 @@ dependencies:
 import 'package:circular_progress_stack/circularprogressstack.dart';
 ```
 
-## Example
+
+## Example 
+
+
+### Stack Circular Progress
 
 ```dart
-
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          title: Text(widget.title),
-        ),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Center(
+Center(
               child: StackCircularProgress(
                 circleSize: MediaQuery.of(context).size.width - 200,
                 strokeWidth: 15,
@@ -65,96 +60,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 ],
               ),
             ),
-            const SizedBox(
-              height: 10,
-            ),
-            const Text(
-              "Restaurant Rating Data",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-            ),
-            const SizedBox(
-              height: 50,
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 0),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  const Text(
-                    "Rating",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Container(
-                        height: 12,
-                        width: 12,
-                        color: BarColor.green,
-                      ),
-                      const SizedBox(
-                        width: 10,
-                      ),
-                      const Text(
-                        ">4",
-                        style: TextStyle(
-                            fontSize: 16, fontWeight: FontWeight.bold),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Container(
-                        height: 12,
-                        width: 12,
-                        color: BarColor.red,
-                      ),
-                      const SizedBox(
-                        width: 10,
-                      ),
-                      const Text(
-                        ">3",
-                        style: TextStyle(
-                            fontSize: 16, fontWeight: FontWeight.bold),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Container(
-                        height: 12,
-                        width: 12,
-                        color: BarColor.purple,
-                      ),
-                      const SizedBox(
-                        width: 10,
-                      ),
-                      const Text(
-                        "<3",
-                        style: TextStyle(
-                            fontSize: 16, fontWeight: FontWeight.bold),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-            const SizedBox(
-              height: 50,
-            ),
-            Center(
+  ```
+  
+### Animated Stack Circular Progress
+
+```dart
+ Center(
               child: AnimatedStackCircularProgress(
                 circleSize: MediaQuery.of(context).size.width - 300,
                 strokeWidth: 10,
@@ -173,9 +84,4 @@ class _MyHomePageState extends State<MyHomePage> {
                 ],
               ),
             ),
-          ],
-        ));
-  }
-}
-
-```
+  ```
