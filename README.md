@@ -9,8 +9,8 @@
     <a href="https://pub.dev/packages/agora_uikit"><img src="https://img.shields.io/pub/points/circular_progress_stack?logo=dart"/></a><br/>
     <img src="https://img.shields.io/badge/Platform-iOS%20%7C%20Android-blue?logo=flutter" alt="Platform" />
     <a href="https://pub.dev/packages/agora_uikit"><img src="https://img.shields.io/pub/v/circular_progress_stack"/></a>
-
-
+  <img src="https://img.shields.io/github/license/agoraio-community/videouikit-flutter?color=red"
+      alt="License: MIT" />
 </p>
 
 Make an **Simple** or **Animated** multiple circular progress bar using **Stack Circular Progress**.
