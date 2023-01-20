@@ -14,12 +14,12 @@
 
 Make an **Simple** or **Animated** multiple circular progress bar using **Stack Circular Progress**.
 
-# Demo Simple And Animated Progress
+## Screenshots
+| Simple Cricular Porgress | Animated Cricular Porgress |
+|---|---|
+| <img src="https://user-images.githubusercontent.com/95899209/213628682-fa85ad7d-a0ef-48f5-94ba-5786e720d8dd.png" width="200"> | <img src="https://user-images.githubusercontent.com/95899209/213628480-935e79a5-357d-4196-9fb4-7ecdbcff07c1.gif" width="200"> |
 
-<div>  
-<img src= "https://user-images.githubusercontent.com/95899209/213628682-fa85ad7d-a0ef-48f5-94ba-5786e720d8dd.png" width="200"/>
-<img src= "https://user-images.githubusercontent.com/95899209/213628480-935e79a5-357d-4196-9fb4-7ecdbcff07c1.gif" width="200"/>
-</div>
+
   &nbsp;&nbsp;&nbsp;&nbsp;
 
 ## Getting started
@@ -102,3 +102,6 @@ Center(
               ),
             ),
   ```
+## Support
+
+If you find any bugs or issues while using the plugin, please register an issues on [GitHub](https://github.com/Trushar88/stackcircularprogressbar/issues). You can also contact us at <mistrytrushar88@gmail.com>.
