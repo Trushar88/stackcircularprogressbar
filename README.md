@@ -14,7 +14,7 @@
 
 Make an animated multiple circular using Stack CircularProgress.
 
-![ssp](https://user-images.githubusercontent.com/95899209/213517968-bf1bfce8-20af-45c0-b5bd-3a7d942a30ff.png)
+![Screenshot_1674193728](https://user-images.githubusercontent.com/95899209/213626508-56a87750-d37e-4d17-9992-35ec9923e457.png)
 
 
   &nbsp;&nbsp;&nbsp;&nbsp;
