@@ -105,3 +105,7 @@ Center(
 ## Support
 
 If you find any bugs or issues while using the plugin, please register an issues on [GitHub](https://github.com/Trushar88/stackcircularprogressbar/issues). You can also contact us at <mistrytrushar88@gmail.com>.
+
+## Author
+
+This circular_progress_stack plugin for Flutter is developed by [Trushar Mistry](https://github.com/Trushar88).
