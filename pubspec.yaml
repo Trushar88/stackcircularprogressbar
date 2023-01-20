@@ -1,6 +1,6 @@
 name: circular_progress_stack
-description: This package use multple circular progress bar
-version: 0.0.1
+description: This package use for easy to create multple circular progress bar. Make an Simple or Animated multiple circular progress bar using Stack Circular Progress.Using this package You can create beautiful multi circular progress bars  
+version: 0.0.2
 repository:  https://github.com/Trushar88/stackcircularprogressbar
 homepage: https://github.com/Trushar88/stackcircularprogressbar/blob/main/example/lib/main.dart
 

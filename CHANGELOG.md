@@ -9,3 +9,8 @@
   * Set empty bar color
   * Set animation duration
 
+## 0.0.2
+
+  Stack Circular Porgress First Release.
+  Changes: 
+  * change in documentation and pubspec only  
