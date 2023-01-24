@@ -14,3 +14,7 @@
   Stack Circular Porgress First Release.
   Changes: 
   * change in documentation and pubspec only  
+  * Add new **Gradient Stack Circular Progress** with animated stack circular
+  * you can set **Gradient Color** every circular
+  * solved size realted issue in every circular
+  * optimize code qaulity and perfomance
