@@ -15,7 +15,7 @@ Make an **Simple** or **Animated** multiple circular progress bar using **Stack 
 ## Screenshots
 | Simple Cricular Porgress | Animated Cricular Porgress |
 |---|---|
-| <img src="https://user-images.githubusercontent.com/95899209/213628682-fa85ad7d-a0ef-48f5-94ba-5786e720d8dd.png" width="200"> | <img src="https://user-images.githubusercontent.com/95899209/213628480-935e79a5-357d-4196-9fb4-7ecdbcff07c1.gif" width="200"> |
+| <img src="https://user-images.githubusercontent.com/95899209/214249833-1ac57e38-9d1c-49f9-999a-98ea27c329f4.png" width="200"> | <img src="https://user-images.githubusercontent.com/95899209/214249982-38999a53-8b31-4d1c-86d4-17580b37b5e8.gif" width="200"> |
 
 
   &nbsp;&nbsp;&nbsp;&nbsp;
