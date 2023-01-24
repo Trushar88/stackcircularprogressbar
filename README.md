@@ -36,51 +36,112 @@ import 'package:circular_progress_stack/circularprogressstack.dart';
 ## Example 
 
 
-### Stack Circular Progress
+### Simple Stack Circular Progress
 
 ```dart
 Center(
-              child: StackCircularProgress(
-                circleSize: MediaQuery.of(context).size.width - 200,
-                strokeWidth: 15,
-                strokeSpacePadding: 10,
-                unporgressBarColor: const Color(0xffD7DEE7),
-                barValues: [
-                 
-                  BarValue(
-                      progressValueInPercentage: 50, barColor: BarColor.green),
-                  BarValue(
-                      progressValueInPercentage: 40, barColor: BarColor.red),
-                  BarValue(
-                      progressValueInPercentage: 30, barColor: BarColor.purple),
-                ],
+                child: SimpleNewStackCircularProgressBar(
+                  size: 200,
+                  progressStrokeWidth: 15,
+                  backStrokeWidth: 15,
+                  startAngle: 0,
+                  backColor: const Color(0xffD7DEE7),
+                  bars: [
+                    SimpleNewBarValue(
+                      barColor: Colors.red,
+                      barValues: 50,
+                      fullProgressColors: Colors.red,
+                    ),
+                    SimpleNewBarValue(
+                      barColor: Colors.green,
+                      barValues: 50,
+                      fullProgressColors: Colors.red,
+                    ),
+                    SimpleNewBarValue(
+                      barColor: Colors.blue,
+                      barValues: 100,
+                      fullProgressColors: Colors.red,
+                    ),
+                  ],
+                ),
               ),
-            ),
   ```
   
 ### Animated Stack Circular Progress
 
 ```dart
-  Center(
-              child: AnimatedStackCircularProgress(
-                circleSize: MediaQuery.of(context).size.width - 300,
-                strokeWidth: 10,
-                strokeSpacePadding: 0,
-                unPorgressBarWidth: -5,
-                isAnimated: true,
-                unProgressBarColor: const Color(0xffD7DEE7),
-                animationDurationIn: const Duration(seconds: 1),
-                barValues: [
-                  BarValue(
-                      progressValueInPercentage: 50, barColor: BarColor.blue),
-                  BarValue(
-                      progressValueInPercentage: 40, barColor: BarColor.red),
-                  BarValue(
-                      progressValueInPercentage: 30, barColor: BarColor.green),
-                ],
+ Center(
+                child: AnimatedStackCircularProgressBar(
+                  size: 200,
+                  progressStrokeWidth: 15,
+                  backStrokeWidth: 15,
+                  startAngle: 0,
+                  backColor: const Color(0xffD7DEE7),
+                  bars: [
+                    AnimatedBarValue(
+                      barColor: Colors.red,
+                      barValues: 100,
+                      fullProgressColors: Colors.red,
+                    ),
+                    AnimatedBarValue(
+                      barColor: Colors.green,
+                      barValues: 70,
+                      fullProgressColors: Colors.red,
+                    ),
+                    AnimatedBarValue(
+                      barColor: Colors.blue,
+                      barValues: 70,
+                      fullProgressColors: Colors.red,
+                    ),
+                  ],
+                ),
               ),
-            ),
   ```
+  
+  
+### Gardient Animated Stack Circular Progress
+
+```dart
+ Center(
+                child: GardientStackCircularProgressBar(
+                  size: 200,
+                  progressStrokeWidth: 15,
+                  backStrokeWidth: 15,
+                  startAngle: 0,
+                  mergeMode: true,
+                  maxValue: 100,
+                  backColor: const Color(0xffD7DEE7),
+                  bars: [
+                    GardientBarValue(
+                      barColores: [
+                        Colors.red,
+                        Colors.blue,
+                      ],
+                      barValues: 70,
+                      fullProgressColors: Colors.red,
+                    ),
+                    GardientBarValue(
+                      barColores: [
+                        Colors.blue,
+                        Colors.yellow,
+                      ],
+                      barValues: 50,
+                      fullProgressColors: Colors.yellow,
+                    ),
+                    GardientBarValue(
+                      barColores: [
+                        Colors.green,
+                        Colors.orange,
+                      ],
+                      barValues: 70,
+                      fullProgressColors: Colors.orange,
+                    ),
+                  ],
+                ),
+              ),
+  ```
+  
+  
 ## Support
 
 If you find any bugs or issues while using the plugin, please register an issues on [GitHub](https://github.com/Trushar88/stackcircularprogressbar/issues). You can also contact us at <mistrytrushar88@gmail.com>.
