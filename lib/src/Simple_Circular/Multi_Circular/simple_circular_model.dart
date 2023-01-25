@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-class GardientBarValue {
-  late List<Color> barColores;
+class SimpleBarValue {
+  late Color barColor;
   late double barValues;
   late Color fullProgressColors;
 
-  GardientBarValue(
-      {required this.barColores,
+  SimpleBarValue(
+      {required this.barColor,
       required this.barValues,
       required this.fullProgressColors});
 }

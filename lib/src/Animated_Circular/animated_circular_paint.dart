@@ -1,6 +1,6 @@
 import 'dart:math';
 
-import 'package:circular_progress_stack/src/Gardient_Circular/gradient_circular_utils.dart';
+import 'package:circular_progress_stack/src/utils.dart';
 import 'package:flutter/material.dart';
 
 /// Painter to draw the progress bar.

@@ -1,10 +1,10 @@
 import 'dart:math';
 
-import 'package:circular_progress_stack/src/Gardient_Circular/gradient_circular_utils.dart';
+import 'package:circular_progress_stack/src/utils.dart';
 import 'package:flutter/material.dart';
 
 /// Painter to draw the progress bar.
-class SimpleNewCircularProgressBarPainter extends CustomPainter {
+class GradientCircularProgressBarPainter extends CustomPainter {
   /// Progress line thickness.
   final double progressStrokeWidth;
 
@@ -17,7 +17,7 @@ class SimpleNewCircularProgressBarPainter extends CustomPainter {
   final double currentLength;
 
   /// Foreground gradient sweep
-  final Color color;
+  final SweepGradient frontGradient;
 
   /// Background circle line Color
   final Color backColor;
@@ -25,16 +25,16 @@ class SimpleNewCircularProgressBarPainter extends CustomPainter {
   /// It's color applied after progress done
   final Color fullProgressColor;
 
-  /// Single color appiled(if progress done) if it's true
+  /// Single color appiled() if it's true
   final bool isFullProgress;
 
-  SimpleNewCircularProgressBarPainter({
+  GradientCircularProgressBarPainter({
     required this.progressStrokeWidth,
     required this.backStrokeWidth,
     required this.startAngle,
     required this.sweepAngle,
     required this.currentLength,
-    required this.color,
+    required this.frontGradient,
     required this.backColor,
     required this.fullProgressColor,
     required this.isFullProgress,
@@ -60,7 +60,7 @@ class SimpleNewCircularProgressBarPainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(SimpleNewCircularProgressBarPainter oldDelegate) {
+  bool shouldRepaint(GradientCircularProgressBarPainter oldDelegate) {
     return oldDelegate.currentLength != currentLength;
   }
 
@@ -69,7 +69,7 @@ class SimpleNewCircularProgressBarPainter extends CustomPainter {
     final Rect arcRect = Offset.zero & size;
 
     final Paint arcPaint = Paint()
-      ..color = color
+      ..shader = frontGradient.createShader(arcRect)
       ..strokeWidth = progressStrokeWidth
       ..strokeCap = StrokeCap.round
       ..style = PaintingStyle.stroke;
@@ -111,7 +111,7 @@ class SimpleNewCircularProgressBarPainter extends CustomPainter {
     }
 
     final Paint pathPaint = Paint()
-      ..color = Colors.blue
+      ..shader = frontGradient.createShader(Offset.zero & size)
       ..style = PaintingStyle.fill;
 
     final Offset circleOffset = Offset(

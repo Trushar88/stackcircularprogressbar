@@ -13,11 +13,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Circular Stack Progress',
+      title: APPBARTITILE,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Circular Stack Progress'),
+      home: const MyHomePage(title: APPBARTITILE),
     );
   }
 }
@@ -78,6 +78,12 @@ class _MyHomePageState extends State<MyHomePage> {
       return _progressSimpleCircular();
     } else if (value == ANIMATED) {
       return _progressAnimatedCircular();
+    } else if (value == SINGLEANIMATED) {
+      return _progressSingleAnimatedCircular();
+    } else if (value == SINGLESIMPLE) {
+      return _progressSingleSimpleCircular();
+    } else if (value == SINGLEGRADIENT) {
+      return _progressSingleGardientAnimatedCircular();
     } else {
       return _progressGardientAnimatedCircular();
     }
@@ -114,7 +120,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Widget _progressGardientAnimatedCircular() {
     return Center(
-      child: GardientStackCircularProgressBar(
+      child: GradientStackCircularProgressBar(
         size: 200,
         progressStrokeWidth: 15,
         backStrokeWidth: 15,
@@ -123,7 +129,7 @@ class _MyHomePageState extends State<MyHomePage> {
         maxValue: 100,
         backColor: const Color(0xffD7DEE7),
         bars: [
-          GardientBarValue(
+          GradientBarValue(
             barColores: [
               Colors.red,
               Colors.blue,
@@ -131,7 +137,7 @@ class _MyHomePageState extends State<MyHomePage> {
             barValues: 60,
             fullProgressColors: Colors.red,
           ),
-          GardientBarValue(
+          GradientBarValue(
             barColores: [
               Colors.blue,
               Colors.yellow,
@@ -139,7 +145,7 @@ class _MyHomePageState extends State<MyHomePage> {
             barValues: 70,
             fullProgressColors: Colors.yellow,
           ),
-          GardientBarValue(
+          GradientBarValue(
             barColores: [
               Colors.green,
               Colors.orange,
@@ -154,29 +160,74 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Widget _progressSimpleCircular() {
     return Center(
-      child: SimpleNewStackCircularProgressBar(
+      child: SimpleStackCircularProgressBar(
         size: 200,
         progressStrokeWidth: 15,
         backStrokeWidth: 15,
         startAngle: 0,
         backColor: const Color(0xffD7DEE7),
         bars: [
-          SimpleNewBarValue(
+          SimpleBarValue(
             barColor: Colors.red,
             barValues: 60,
             fullProgressColors: Colors.red,
           ),
-          SimpleNewBarValue(
+          SimpleBarValue(
             barColor: Colors.green,
             barValues: 70,
             fullProgressColors: Colors.red,
           ),
-          SimpleNewBarValue(
+          SimpleBarValue(
             barColor: Colors.blue,
             barValues: 90,
             fullProgressColors: Colors.red,
           ),
         ],
+      ),
+    );
+  }
+
+  Widget _progressSingleAnimatedCircular() {
+    return const Center(
+      child: SingleAnimatedStackCircularProgressBar(
+        size: 200,
+        progressStrokeWidth: 15,
+        backStrokeWidth: 15,
+        startAngle: 0,
+        backColor: Color(0xffD7DEE7),
+        barColor: Colors.blue,
+        barValue: 70,
+      ),
+    );
+  }
+
+  Widget _progressSingleGardientAnimatedCircular() {
+    return const Center(
+      child: SingleGradientStackCircularProgressBar(
+        size: 200,
+        progressStrokeWidth: 15,
+        backStrokeWidth: 15,
+        startAngle: 0,
+        mergeMode: true,
+        maxValue: 100,
+        backColor: Color(0xffD7DEE7),
+        barColores: [Colors.red, Colors.blue, Colors.green],
+        fullProgressColor: Colors.green,
+        barValue: 99,
+      ),
+    );
+  }
+
+  Widget _progressSingleSimpleCircular() {
+    return const Center(
+      child: SingleSimpleStackCircularProgressBar(
+        size: 200,
+        progressStrokeWidth: 15,
+        backStrokeWidth: 15,
+        startAngle: 0,
+        backColor: Color(0xffD7DEE7),
+        barColor: Colors.red,
+        barValue: 70,
       ),
     );
   }

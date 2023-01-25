@@ -1,6 +1,16 @@
 // ignore_for_file: constant_identifier_names
 
+import 'dart:math';
+
 import 'package:flutter/material.dart';
+
+const double doublePi = 2 * pi;
+
+const double piDiv180 = pi / 180;
+
+double degToRad(double degree) {
+  return degree * piDiv180;
+}
 
 // getStrokeSpace count the space between two bars
 double getStrokeSpace(index, strokWidth, strokSpace) =>

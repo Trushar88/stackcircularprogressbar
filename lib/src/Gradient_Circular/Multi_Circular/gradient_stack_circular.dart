@@ -2,14 +2,12 @@
 
 import 'dart:math';
 
-import 'package:circular_progress_stack/src/Animated_Circular/animated_circular_model.dart';
-import 'package:circular_progress_stack/src/Animated_Circular/animated_circular_paint.dart';
-import 'package:circular_progress_stack/src/Gardient_Circular/gradient_circular_utils.dart';
+import 'package:circular_progress_stack/src/Gradient_Circular/Multi_Circular/gradient_circular_model.dart';
+import 'package:circular_progress_stack/src/Gradient_Circular/gradient_circular_paint.dart';
+import 'package:circular_progress_stack/src/utils.dart';
 import 'package:flutter/material.dart';
 
-import '../utils.dart';
-
-class AnimatedStackCircularProgressBar extends StatefulWidget {
+class GradientStackCircularProgressBar extends StatefulWidget {
   /// Size of circle
   final double size;
 
@@ -29,7 +27,7 @@ class AnimatedStackCircularProgressBar extends StatefulWidget {
   final double backStrokeWidth;
 
   /// Draw bars using this bars value
-  final List<AnimatedBarValue> bars;
+  final List<GradientBarValue> bars;
 
   /// Backgound color
   final Color backColor;
@@ -37,7 +35,10 @@ class AnimatedStackCircularProgressBar extends StatefulWidget {
   /// Animate pogress time
   final Duration animationDuration;
 
-  const AnimatedStackCircularProgressBar({
+  /// If is true then single color will applied after progress done
+  final bool mergeMode;
+
+  const GradientStackCircularProgressBar({
     Key? key,
     this.size = 100,
     this.startAngle = 0,
@@ -48,21 +49,23 @@ class AnimatedStackCircularProgressBar extends StatefulWidget {
     required this.bars,
     this.backColor = const Color(0xFF16262D),
     this.animationDuration = const Duration(seconds: 3),
+    this.mergeMode = false,
   }) : super(key: key);
 
   @override
-  _AnimatedStackCircularProgressBarState createState() =>
-      _AnimatedStackCircularProgressBarState();
+  _GradientStackCircularProgressBarState createState() =>
+      _GradientStackCircularProgressBarState();
 }
 
-class _AnimatedStackCircularProgressBarState
-    extends State<AnimatedStackCircularProgressBar>
+class _GradientStackCircularProgressBarState
+    extends State<GradientStackCircularProgressBar>
     with TickerProviderStateMixin {
   final double minSweepAngle = 0.015;
   late double circleLength;
   late double widgetSize;
   late double startAngle;
   late double correctAngle;
+  late List<SweepGradient> sweepGradient;
   late List<AnimationController> animationController;
   late List<ValueNotifier<double>> valueNotifier;
   late List<Animation<int>> animation;
@@ -81,7 +84,7 @@ class _AnimatedStackCircularProgressBarState
 
   //update widget
   @override
-  void didUpdateWidget(covariant AnimatedStackCircularProgressBar oldWidget) {
+  void didUpdateWidget(covariant GradientStackCircularProgressBar oldWidget) {
     _disposeAnim();
     _initController();
     super.didUpdateWidget(oldWidget);
@@ -100,7 +103,7 @@ class _AnimatedStackCircularProgressBarState
   }
 
   //return main circle widget
-  Widget _circular(int index, Color fullProgressColors, Color frontColor) {
+  Widget _circular(int index, Color fullProgressColors) {
     return ValueListenableBuilder(
       valueListenable: valueNotifier[index],
       builder: (BuildContext context, double value, Widget? child) {
@@ -136,19 +139,20 @@ class _AnimatedStackCircularProgressBarState
               }
             }
             final currentLength = reducedValue * circleLength;
-            final isFullProgress = (animationController[index].value ==
-                animationController[index].upperBound);
+            final isFullProgress = widget.mergeMode &
+                (animationController[index].value ==
+                    animationController[index].upperBound);
             return Transform.rotate(
               angle: degToRad(widget.startAngle - 90),
               child: CustomPaint(
                 size: Size(widgetSize, widgetSize),
-                painter: AnimatedCircularProgressBarPainter(
+                painter: GradientCircularProgressBarPainter(
                   progressStrokeWidth: widget.progressStrokeWidth,
                   backStrokeWidth: widget.backStrokeWidth,
                   startAngle: startAngle,
                   sweepAngle: sweepAngle,
                   currentLength: currentLength,
-                  color: frontColor,
+                  frontGradient: sweepGradient[index],
                   backColor: widget.backColor,
                   fullProgressColor: fullProgressColors,
                   isFullProgress: isFullProgress,
@@ -169,7 +173,7 @@ class _AnimatedStackCircularProgressBarState
   }
 
   /// return list of circle based on bars value
-  Widget _getStackCirculers({required List<AnimatedBarValue> circles}) {
+  Widget _getStackCirculers({required List<GradientBarValue> circles}) {
     return Stack(
       children: List.generate(circles.length, (index) {
         return Positioned(
@@ -181,8 +185,7 @@ class _AnimatedStackCircularProgressBarState
                 index, widget.progressStrokeWidth, widget.strokeSpacePadding),
             right: getStrokeSpace(
                 index, widget.progressStrokeWidth, widget.strokeSpacePadding),
-            child: _circular(index, circles[index].fullProgressColors,
-                circles[index].barColor));
+            child: _circular(index, circles[index].fullProgressColors));
       }),
     );
   }
@@ -193,6 +196,7 @@ class _AnimatedStackCircularProgressBarState
   /// initialize valueNotifier
   void _initController() {
     animationController = <AnimationController>[];
+    sweepGradient = <SweepGradient>[];
     valueNotifier = [];
     for (int i = 0; i < widget.bars.length; i++) {
       animationController.add(AnimationController(
@@ -200,7 +204,10 @@ class _AnimatedStackCircularProgressBarState
           duration: widget.animationDuration,
           value: 0.0,
           upperBound: widget.maxValue));
-
+      sweepGradient.add(SweepGradient(
+        tileMode: TileMode.decal,
+        colors: widget.bars[i].barColores,
+      ));
       valueNotifier.add(ValueNotifier(widget.bars[i].barValues));
     }
     widgetSize = (widget.size <= 0) ? 100.0 : widget.size;

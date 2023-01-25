@@ -2,14 +2,12 @@
 
 import 'dart:math';
 
-import 'package:circular_progress_stack/src/Gardient_Circular/gradient_circular_utils.dart';
-import 'package:circular_progress_stack/src/Simaple_New_Circular/simple_new_circular_model.dart';
-import 'package:circular_progress_stack/src/Simaple_New_Circular/simple_new_circular_paint.dart';
+import 'package:circular_progress_stack/src/Simple_Circular/Multi_Circular/simple_circular_model.dart';
+import 'package:circular_progress_stack/src/Simple_Circular/simple_circular_paint.dart';
+import 'package:circular_progress_stack/src/utils.dart';
 import 'package:flutter/material.dart';
 
-import '../utils.dart';
-
-class SimpleNewStackCircularProgressBar extends StatefulWidget {
+class SimpleStackCircularProgressBar extends StatefulWidget {
   /// Size of circle
   final double size;
 
@@ -29,14 +27,14 @@ class SimpleNewStackCircularProgressBar extends StatefulWidget {
   final double backStrokeWidth;
 
   /// Draw bars using this bars value
-  final List<SimpleNewBarValue> bars;
+  final List<SimpleBarValue> bars;
 
   /// Backgound color
   final Color backColor;
 
   /// Animate pogress time
 
-  const SimpleNewStackCircularProgressBar({
+  const SimpleStackCircularProgressBar({
     Key? key,
     this.size = 100,
     this.startAngle = 0,
@@ -49,12 +47,12 @@ class SimpleNewStackCircularProgressBar extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  _SimpleNewStackCircularProgressBarState createState() =>
-      _SimpleNewStackCircularProgressBarState();
+  _SimpleStackCircularProgressBarState createState() =>
+      _SimpleStackCircularProgressBarState();
 }
 
-class _SimpleNewStackCircularProgressBarState
-    extends State<SimpleNewStackCircularProgressBar>
+class _SimpleStackCircularProgressBarState
+    extends State<SimpleStackCircularProgressBar>
     with TickerProviderStateMixin {
   final double minSweepAngle = 0.015;
   late double circleLength;
@@ -78,7 +76,7 @@ class _SimpleNewStackCircularProgressBarState
 
   //update widget
   @override
-  void didUpdateWidget(covariant SimpleNewStackCircularProgressBar oldWidget) {
+  void didUpdateWidget(covariant SimpleStackCircularProgressBar oldWidget) {
     _initController();
     super.didUpdateWidget(oldWidget);
   }
@@ -121,7 +119,7 @@ class _SimpleNewStackCircularProgressBarState
   }
 
   /// return list of circle based on bars value
-  Widget _getStackCirculers({required List<SimpleNewBarValue> circles}) {
+  Widget _getStackCirculers({required List<SimpleBarValue> circles}) {
     return Stack(
       children: List.generate(circles.length, (index) {
         return Positioned(
