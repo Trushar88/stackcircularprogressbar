@@ -10,7 +10,7 @@
       alt="License: MIT" />
 </p>
 
-Make an **Simple** or **Animated** multiple circular progress bar using **Stack Circular Progress**.
+Make an **Simple** or **Animated** multiple and single circular progress bar using **Stack Circular Progress**.
 
 ## Screenshots
 ### Stack Circular
