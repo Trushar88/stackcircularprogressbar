@@ -13,10 +13,19 @@
 Make an **Simple** or **Animated** multiple circular progress bar using **Stack Circular Progress**.
 
 ## Screenshots
+### Stack Circular
+
 | Simple Cricular Porgress | Animated Cricular Porgress | Gradient Cricular Porgress |
 |---|---|---|
 | <img src="https://user-images.githubusercontent.com/95899209/214249833-1ac57e38-9d1c-49f9-999a-98ea27c329f4.png" width="200"> | <img src="https://user-images.githubusercontent.com/95899209/214249982-38999a53-8b31-4d1c-86d4-17580b37b5e8.gif" width="200"> | <img src="https://user-images.githubusercontent.com/95899209/214250330-d3d8df3c-4f02-4998-8675-16e20ce541f1.gif" width="200"> |
 
+ &nbsp;
+ 
+### Single Circular
+
+| Simple Cricular Porgress | Animated Cricular Porgress | Gradient Cricular Porgress |
+|---|---|---|
+| <img src="https://user-images.githubusercontent.com/95899209/215424314-40de8676-2898-48c7-b9fe-be27b088ecd6.png" width="200"> | <img src="https://user-images.githubusercontent.com/95899209/215424943-93716654-f565-4804-a5a4-dc671efd81ff.gif" width="200"> | <img src="https://user-images.githubusercontent.com/95899209/215425629-c73cc8f9-9a5a-4b4d-b226-4426ef906f57.gif" width="200"> |
 
   &nbsp;&nbsp;&nbsp;&nbsp;
 
@@ -26,7 +35,7 @@ Make an **Simple** or **Animated** multiple circular progress bar using **Stack 
 
 ```yaml
 dependencies:
-  circular_progress_stack: ^0.0.1
+  circular_progress_stack: ^0.0.3
 ```
 
 ### Import
@@ -38,7 +47,7 @@ import 'package:circular_progress_stack/circularprogressstack.dart';
 
 ## Example 
 
-
+### Stack Circular
 ### Simple Stack Circular Progress
 
 ```dart
@@ -142,6 +151,59 @@ Center(
                   ],
                 ),
               ),
+  ```
+
+### Single Circular
+### Simple Stack Circular Progress
+
+```dart
+Center(
+      child: SingleSimpleStackCircularProgressBar(
+        size: 200,
+        progressStrokeWidth: 15,
+        backStrokeWidth: 15,
+        startAngle: 0,
+        backColor: Color(0xffD7DEE7),
+        barColor: Colors.red,
+        barValue: 70,
+      ),
+    );
+  ```
+  
+### Animated Stack Circular Progress
+
+```dart
+ Center(
+      child: SingleAnimatedStackCircularProgressBar(
+        size: 200,
+        progressStrokeWidth: 15,
+        backStrokeWidth: 15,
+        startAngle: 0,
+        backColor: Color(0xffD7DEE7),
+        barColor: Colors.blue,
+        barValue: 70,
+      ),
+    );
+  ```
+  
+  
+### Gardient Animated Stack Circular Progress
+
+```dart
+Center(
+      child: SingleGradientStackCircularProgressBar(
+        size: 200,
+        progressStrokeWidth: 15,
+        backStrokeWidth: 15,
+        startAngle: 0,
+        mergeMode: true,
+        maxValue: 100,
+        backColor: Color(0xffD7DEE7),
+        barColores: [Colors.red, Colors.blue, Colors.green],
+        fullProgressColor: Colors.green,
+        barValue: 99,
+      ),
+    );
   ```
   
   
