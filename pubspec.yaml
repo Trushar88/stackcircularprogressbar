@@ -1,5 +1,5 @@
 name: circular_progress_stack
-description: This package use for easy to create multple circular progress bar. and you can set gradient and animated
+description: This package use for easy to create multple and single circular progress bar. and you can set gradient and animatation duration.
 version: 0.0.3
 repository:  https://github.com/Trushar88/stackcircularprogressbar
 homepage: https://github.com/Trushar88/stackcircularprogressbar/blob/main/example/lib/main.dart
